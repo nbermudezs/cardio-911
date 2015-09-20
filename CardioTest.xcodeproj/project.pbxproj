@@ -13,7 +13,64 @@
 		E61C6A881B9BDE01009D82DB /* CardioTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E61C6A861B9BDE01009D82DB /* CardioTest.xcdatamodeld */; };
 		E61C6A8A1B9BDE01009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6A891B9BDE01009D82DB /* Assets.xcassets */; };
 		E61C6A8D1B9BDE01009D82DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61C6A8B1B9BDE01009D82DB /* LaunchScreen.storyboard */; };
+		E61C6A9A1B9BDE15009D82DB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61C6A981B9BDE15009D82DB /* Interface.storyboard */; };
+		E61C6A9C1B9BDE15009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6A9B1B9BDE15009D82DB /* Assets.xcassets */; };
+		E61C6AA31B9BDE15009D82DB /* CardioTestWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E61C6AA21B9BDE15009D82DB /* CardioTestWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E61C6AA81B9BDE15009D82DB /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C6AA71B9BDE15009D82DB /* InterfaceController.swift */; };
+		E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */; };
+		E61C6AAC1B9BDE15009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */; };
+		E61C6AB01B9BDE15009D82DB /* CardioTestWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */; };
+		E6585A031B9BF844005055F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6585A021B9BF844005055F7 /* HealthKit.framework */; };
+		E6585A061B9BFF27005055F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6585A051B9BFF27005055F7 /* HealthKit.framework */; };
+		E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D5461BA62ACC006B80B2 /* BeatPattern.swift */; settings = {ASSET_TAGS = (); }; };
+		E685D54C1BA663B5006B80B2 /* TropoGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D54B1BA663B5006B80B2 /* TropoGateway.swift */; settings = {ASSET_TAGS = (); }; };
+		E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D54D1BA67791006B80B2 /* RestcommGateway.swift */; settings = {ASSET_TAGS = (); }; };
+		E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E61C6AA41B9BDE15009D82DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E61C6A741B9BDE00009D82DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E61C6AA11B9BDE15009D82DB;
+			remoteInfo = "CardioTestWatchApp Extension";
+		};
+		E61C6AAE1B9BDE15009D82DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E61C6A741B9BDE00009D82DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E61C6A951B9BDE15009D82DB;
+			remoteInfo = CardioTestWatchApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E61C6AB41B9BDE15009D82DB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E61C6AA31B9BDE15009D82DB /* CardioTestWatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E61C6AB81B9BDE15009D82DB /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E61C6AB01B9BDE15009D82DB /* CardioTestWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E61C6A7C1B9BDE00009D82DB /* CardioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +81,25 @@
 		E61C6A891B9BDE01009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E61C6A8C1B9BDE01009D82DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E61C6A8E1B9BDE01009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardioTestWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E61C6A991B9BDE15009D82DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E61C6A9B1B9BDE15009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E61C6A9D1B9BDE15009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E61C6AA21B9BDE15009D82DB /* CardioTestWatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CardioTestWatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E61C6AA71B9BDE15009D82DB /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E61C6AAD1B9BDE15009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSessionManager.swift; sourceTree = "<group>"; };
+		E6585A011B9BF844005055F7 /* CardioTestWatchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CardioTestWatchApp Extension.entitlements"; sourceTree = "<group>"; };
+		E6585A021B9BF844005055F7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		E6585A041B9BFF27005055F7 /* CardioTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CardioTest.entitlements; sourceTree = "<group>"; };
+		E6585A051B9BFF27005055F7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E685D5461BA62ACC006B80B2 /* BeatPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeatPattern.swift; sourceTree = "<group>"; };
+		E685D54B1BA663B5006B80B2 /* TropoGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TropoGateway.swift; sourceTree = "<group>"; };
+		E685D54D1BA67791006B80B2 /* RestcommGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestcommGateway.swift; sourceTree = "<group>"; };
+		E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiagnoseInterfaceController.swift; path = ../CardioTestWatchApp/DiagnoseInterfaceController.swift; sourceTree = "<group>"; };
+		E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtrialFibrilationAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +107,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6585A061B9BFF27005055F7 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E61C6A9F1B9BDE15009D82DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6585A031B9BF844005055F7 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +125,11 @@
 		E61C6A731B9BDE00009D82DB = {
 			isa = PBXGroup;
 			children = (
+				E6585A051B9BFF27005055F7 /* HealthKit.framework */,
+				E6585A021B9BF844005055F7 /* HealthKit.framework */,
 				E61C6A7E1B9BDE00009D82DB /* CardioTest */,
+				E61C6A971B9BDE15009D82DB /* CardioTestWatchApp */,
+				E61C6AA61B9BDE15009D82DB /* CardioTestWatchApp Extension */,
 				E61C6A7D1B9BDE00009D82DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				E61C6A7C1B9BDE00009D82DB /* CardioTest.app */,
+				E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */,
+				E61C6AA21B9BDE15009D82DB /* CardioTestWatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +147,7 @@
 		E61C6A7E1B9BDE00009D82DB /* CardioTest */ = {
 			isa = PBXGroup;
 			children = (
+				E6585A041B9BFF27005055F7 /* CardioTest.entitlements */,
 				E61C6A7F1B9BDE01009D82DB /* AppDelegate.swift */,
 				E61C6A811B9BDE01009D82DB /* ViewController.swift */,
 				E61C6A831B9BDE01009D82DB /* Main.storyboard */,
@@ -65,6 +157,42 @@
 				E61C6A861B9BDE01009D82DB /* CardioTest.xcdatamodeld */,
 			);
 			path = CardioTest;
+			sourceTree = "<group>";
+		};
+		E61C6A971B9BDE15009D82DB /* CardioTestWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				E61C6A981B9BDE15009D82DB /* Interface.storyboard */,
+				E61C6A9B1B9BDE15009D82DB /* Assets.xcassets */,
+				E61C6A9D1B9BDE15009D82DB /* Info.plist */,
+			);
+			path = CardioTestWatchApp;
+			sourceTree = "<group>";
+		};
+		E61C6AA61B9BDE15009D82DB /* CardioTestWatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E685D54A1BA6635A006B80B2 /* libs */,
+				E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */,
+				E6585A011B9BF844005055F7 /* CardioTestWatchApp Extension.entitlements */,
+				E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */,
+				E61C6AA71B9BDE15009D82DB /* InterfaceController.swift */,
+				E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */,
+				E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */,
+				E61C6AAD1B9BDE15009D82DB /* Info.plist */,
+				E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */,
+				E685D5461BA62ACC006B80B2 /* BeatPattern.swift */,
+			);
+			path = "CardioTestWatchApp Extension";
+			sourceTree = "<group>";
+		};
+		E685D54A1BA6635A006B80B2 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E685D54B1BA663B5006B80B2 /* TropoGateway.swift */,
+				E685D54D1BA67791006B80B2 /* RestcommGateway.swift */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +205,51 @@
 				E61C6A781B9BDE00009D82DB /* Sources */,
 				E61C6A791B9BDE00009D82DB /* Frameworks */,
 				E61C6A7A1B9BDE00009D82DB /* Resources */,
+				E61C6AB81B9BDE15009D82DB /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E61C6AAF1B9BDE15009D82DB /* PBXTargetDependency */,
 			);
 			name = CardioTest;
 			productName = CardioTest;
 			productReference = E61C6A7C1B9BDE00009D82DB /* CardioTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E61C6A951B9BDE15009D82DB /* CardioTestWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E61C6AB51B9BDE15009D82DB /* Build configuration list for PBXNativeTarget "CardioTestWatchApp" */;
+			buildPhases = (
+				E61C6A941B9BDE15009D82DB /* Resources */,
+				E61C6AB41B9BDE15009D82DB /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E61C6AA51B9BDE15009D82DB /* PBXTargetDependency */,
+			);
+			name = CardioTestWatchApp;
+			productName = CardioTestWatchApp;
+			productReference = E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E61C6AA11B9BDE15009D82DB /* CardioTestWatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E61C6AB11B9BDE15009D82DB /* Build configuration list for PBXNativeTarget "CardioTestWatchApp Extension" */;
+			buildPhases = (
+				E61C6A9E1B9BDE15009D82DB /* Sources */,
+				E61C6A9F1B9BDE15009D82DB /* Frameworks */,
+				E61C6AA01B9BDE15009D82DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CardioTestWatchApp Extension";
+			productName = "CardioTestWatchApp Extension";
+			productReference = E61C6AA21B9BDE15009D82DB /* CardioTestWatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +262,24 @@
 				TargetAttributes = {
 					E61C6A7B1B9BDE00009D82DB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 246HEUPQZ9;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					E61C6A951B9BDE15009D82DB = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					E61C6AA11B9BDE15009D82DB = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 246HEUPQZ9;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -115,6 +297,8 @@
 			projectRoot = "";
 			targets = (
 				E61C6A7B1B9BDE00009D82DB /* CardioTest */,
+				E61C6A951B9BDE15009D82DB /* CardioTestWatchApp */,
+				E61C6AA11B9BDE15009D82DB /* CardioTestWatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +311,23 @@
 				E61C6A8D1B9BDE01009D82DB /* LaunchScreen.storyboard in Resources */,
 				E61C6A8A1B9BDE01009D82DB /* Assets.xcassets in Resources */,
 				E61C6A851B9BDE01009D82DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E61C6A941B9BDE15009D82DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E61C6A9C1B9BDE15009D82DB /* Assets.xcassets in Resources */,
+				E61C6A9A1B9BDE15009D82DB /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E61C6AA01B9BDE15009D82DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E61C6AAC1B9BDE15009D82DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +344,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E61C6A9E1B9BDE15009D82DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */,
+				E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */,
+				E685D54C1BA663B5006B80B2 /* TropoGateway.swift in Sources */,
+				E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */,
+				E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */,
+				E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */,
+				E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */,
+				E61C6AA81B9BDE15009D82DB /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E61C6AA51B9BDE15009D82DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E61C6AA11B9BDE15009D82DB /* CardioTestWatchApp Extension */;
+			targetProxy = E61C6AA41B9BDE15009D82DB /* PBXContainerItemProxy */;
+		};
+		E61C6AAF1B9BDE15009D82DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E61C6A951B9BDE15009D82DB /* CardioTestWatchApp */;
+			targetProxy = E61C6AAE1B9BDE15009D82DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E61C6A831B9BDE01009D82DB /* Main.storyboard */ = {
@@ -160,6 +389,14 @@
 				E61C6A8C1B9BDE01009D82DB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E61C6A981B9BDE15009D82DB /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E61C6A991B9BDE15009D82DB /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -252,10 +489,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CardioTest/CardioTest.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CardioTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nbermudezs.CardioTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -263,10 +504,82 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CardioTest/CardioTest.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CardioTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nbermudezs.CardioTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		E61C6AB21B9BDE15009D82DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CardioTestWatchApp Extension/CardioTestWatchApp Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CardioTestWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nbermudezs.CardioTest.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E61C6AB31B9BDE15009D82DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CardioTestWatchApp Extension/CardioTestWatchApp Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CardioTestWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nbermudezs.CardioTest.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		E61C6AB61B9BDE15009D82DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = CardioTestWatchApp_Extension;
+				INFOPLIST_FILE = CardioTestWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = nbermudezs.CardioTest.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E61C6AB71B9BDE15009D82DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = CardioTestWatchApp_Extension;
+				INFOPLIST_FILE = CardioTestWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = nbermudezs.CardioTest.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -289,6 +602,25 @@
 				E61C6A931B9BDE01009D82DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E61C6AB11B9BDE15009D82DB /* Build configuration list for PBXNativeTarget "CardioTestWatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E61C6AB21B9BDE15009D82DB /* Debug */,
+				E61C6AB31B9BDE15009D82DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E61C6AB51B9BDE15009D82DB /* Build configuration list for PBXNativeTarget "CardioTestWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E61C6AB61B9BDE15009D82DB /* Debug */,
+				E61C6AB71B9BDE15009D82DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

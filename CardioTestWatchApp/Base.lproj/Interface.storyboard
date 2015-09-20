@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9jU-dw-aon">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CardioTestWatchApp" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Test Duration" id="VjD-uL-VUp"/>
+                        <timer alignment="center" format="short" previewedSeconds="60" id="po9-UT-uj7"/>
+                        <slider width="1" alignment="left" continuous="YES" value="11" minimum="1" maximum="61" steps="12" id="LVX-lQ-h4D">
+                            <connections>
+                                <action selector="sliderDidChange:" destination="AgC-eL-Hgc" id="gW0-t0-X1o"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" title="Start" id="MNG-ZY-RHC">
+                            <connections>
+                                <action selector="startDiagnosis" destination="AgC-eL-Hgc" id="8lk-xb-pak"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="slider" destination="LVX-lQ-h4D" id="hxK-Zl-hCR"/>
+                        <outlet property="startButton" destination="MNG-ZY-RHC" id="Mwj-u4-wO8"/>
+                        <outlet property="timer" destination="po9-UT-uj7" id="v6l-6F-EzM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="231" y="197"/>
+        </scene>
+        <!--diagnoseController-->
+        <scene sceneID="bLy-r2-vHN">
+            <objects>
+                <controller identifier="diagnoseController" hidesWhenLoading="NO" id="9jU-dw-aon" customClass="DiagnoseInterfaceController" customModule="CardioTestWatchApp_Extension">
+                    <items>
+                        <group width="1" height="50" alignment="left" id="JNT-Fi-7i4">
+                            <items>
+                                <group width="50" height="50" alignment="left" id="pmI-S8-yo7">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="center" verticalAlignment="center" image="heart" contentMode="scaleAspectFit" id="IqN-XG-mMP"/>
+                                    </items>
+                                </group>
+                                <label height="27.5" alignment="right" text="---" id="zTs-Qe-0Bu">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                </label>
+                                <label alignment="right" text="BPM" id="9bS-p3-7dK">
+                                    <color key="textColor" red="1" green="0.088671060176542915" blue="0.053279501429031595" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="ldk-rY-9R4"/>
+                        <group width="1" alignment="left" id="Dcc-Rf-V8F">
+                            <items>
+                                <label alignment="left" text="---" id="s5U-UF-DPp"/>
+                                <label alignment="left" text="rMSSD" id="fpB-yX-mPS">
+                                    <color key="textColor" red="1" green="0.088671060179999997" blue="0.053279501430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Diagnosis:" id="fde-UK-YaJ"/>
+                        <separator alignment="left" id="fJm-zR-eQg"/>
+                        <switch width="1" alignment="left" title="Fake AF" id="Kfb-ey-mMt">
+                            <connections>
+                                <action selector="toggleFakeAf:" destination="9jU-dw-aon" id="3sM-DC-ljR"/>
+                            </connections>
+                        </switch>
+                    </items>
+                    <menu key="menu" id="hbo-hK-9Jc">
+                        <items>
+                            <menuItem title="Finish" icon="accept" id="iqh-el-42M">
+                                <connections>
+                                    <action selector="finishDiagnostic" destination="9jU-dw-aon" id="S14-pO-Tib"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="bpmLabel" destination="zTs-Qe-0Bu" id="bt9-LT-qUu"/>
+                        <outlet property="diagnosisLabel" destination="fde-UK-YaJ" id="xIi-L4-CbD"/>
+                        <outlet property="heartIcon" destination="IqN-XG-mMP" id="G2g-op-zMD"/>
+                        <outlet property="rmssdLabel" destination="s5U-UF-DPp" id="ebi-OL-wRZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="388" y="434"/>
+        </scene>
+    </scenes>
+</document>

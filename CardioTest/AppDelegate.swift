@@ -7,17 +7,26 @@
 //
 
 import UIKit
+import HealthKit
 import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let healthStore = HKHealthStore()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func applicationShouldRequestHealthAuthorization(application: UIApplication) {
+        self.healthStore.handleAuthorizationForExtensionWithCompletion { success, error in
+
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CardioTestWatchApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>E61C6A7B1B9BDE00009D82DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61C6A951B9BDE15009D82DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61C6AA11B9BDE15009D82DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

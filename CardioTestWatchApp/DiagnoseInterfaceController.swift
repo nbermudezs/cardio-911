@@ -10,7 +10,7 @@ import Foundation
 import HealthKit
 import WatchKit
 
-class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerDelegate {
+class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerDelegate, TropoGatewayDelegate {
     
     // MARK: Outlets
     
@@ -24,6 +24,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     
     // MARK: Properties
     let healthStore : HKHealthStore = HKHealthStore()
+    let tropoGateway = TropoGateway()
     
     var sessionManager : WorkoutSessionManager
     var useFakeAfHeartRate = false
@@ -46,6 +47,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
         super.init()
         
         sessionManager.delegate = self
+        tropoGateway.delegate = self
     }
     
     override func willActivate() {
@@ -123,7 +125,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     
     // MARK: Emergency handling
     
-    func alertUser() {
+    private func alertUser() {
         if playHapticFeedback {
             WKInterfaceDevice.currentDevice().playHaptic(WKHapticType.Failure)
         }
@@ -144,8 +146,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
         let notifyAction = WKAlertAction(
             title: "Yes",
             style: WKAlertActionStyle.Destructive) { () -> Void in
-                
-                print("Destructive")
+                self.callContact()
         }
         
         self.presentAlertControllerWithTitle(
@@ -153,6 +154,24 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
             message: "Your heart rate went crazy for a moment. Want to notify someone?",
             preferredStyle: style,
             actions: [notifyAction, cancelAction])
+    }
+    
+    private func callContact() {
+        tropoGateway.notifyUserInTroubles("+13122398676", name: NSFullUserName())
+    }
+    
+    func callDidSucceed() {
+        let okAction = WKAlertAction(
+            title: "OK",
+            style: WKAlertActionStyle.Default) { () -> Void in
+                
+        }
+        
+        self.presentAlertControllerWithTitle(
+            "Help on its way",
+            message: "Your contact has been notified",
+            preferredStyle: WKAlertControllerStyle.Alert,
+            actions: [okAction])
     }
 
 }

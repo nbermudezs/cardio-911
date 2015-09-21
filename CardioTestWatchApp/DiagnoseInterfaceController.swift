@@ -24,20 +24,18 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     
     // MARK: Properties
     let healthStore : HKHealthStore = HKHealthStore()
-    let shrinkFactor = CGFloat(2.0 / 3)
     
     var sessionManager : WorkoutSessionManager
     var useFakeAfHeartRate = false
     var beatDuration = 0.0
     
-    var expandFactor: CGFloat {
-        return 1.0 / shrinkFactor
-    }
     var animationSpeed:Double {
         get {
             return self.beatDuration / 2.0
         }
     }
+    var notAlertedYet = true
+    var playHapticFeedback = true
     
     // MARK: Overrides
     
@@ -109,21 +107,52 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
         // print("rMSSD \(result.rMSSD)")
         rmssdLabel.setText(String(format: "%f", result.rMSSD))
         if result.positive {
-            WKInterfaceDevice.currentDevice().playHaptic(WKHapticType.Failure)
-            alertUser()
+            if notAlertedYet {
+                alertUser()
+            }
+        } else {
+            notAlertedYet = true
         }
     }
     
     func workoutSessionManager(workoutSessionManager: WorkoutSessionManager, didUpdateHeartRateSample heartRateSample: HKQuantitySample) {
         let bpm = heartRateSample.quantity.doubleValueForUnit(HKUnit(fromString: "count/min"))
-        // print("BPM: \(bpm)")
-        bpmLabel.setText("\(bpm)")
+        bpmLabel.setText("\(Int(bpm))")
         self.beatDuration = 60 / bpm;
     }
     
     // MARK: Emergency handling
     
     func alertUser() {
-        
+        if playHapticFeedback {
+            WKInterfaceDevice.currentDevice().playHaptic(WKHapticType.Failure)
+        }
+        self.showAlertControllerWithStyle(WKAlertControllerStyle.SideBySideButtonsAlert)
+        self.notAlertedYet = false
     }
+    
+    private func showAlertControllerWithStyle(style: WKAlertControllerStyle!) {
+        
+        let cancelAction = WKAlertAction(
+            title: "No",
+            style: WKAlertActionStyle.Cancel) { () -> Void in
+                // TODO: Add action to re-enable it, maybe a "I'm OK" button the user can click
+                self.playHapticFeedback = false
+                print("Haptic Feedback disabled")
+        }
+        
+        let notifyAction = WKAlertAction(
+            title: "Yes",
+            style: WKAlertActionStyle.Destructive) { () -> Void in
+                
+                print("Destructive")
+        }
+        
+        self.presentAlertControllerWithTitle(
+            "Everything OK?",
+            message: "Your heart rate went crazy for a moment. Want to notify someone?",
+            preferredStyle: style,
+            actions: [notifyAction, cancelAction])
+    }
+
 }

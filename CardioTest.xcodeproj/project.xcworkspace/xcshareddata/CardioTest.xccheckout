@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6A07C1A1-E200-4EBC-B305-7F30259F53B5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EADEDF3DAFBDEE8B05E3E592DA452BF0D697BDC7</key>
+		<string>github.com:nbermudezs/cardio-911.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CardioTest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EADEDF3DAFBDEE8B05E3E592DA452BF0D697BDC7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:nbermudezs/cardio-911.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EADEDF3DAFBDEE8B05E3E592DA452BF0D697BDC7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EADEDF3DAFBDEE8B05E3E592DA452BF0D697BDC7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CardioTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>

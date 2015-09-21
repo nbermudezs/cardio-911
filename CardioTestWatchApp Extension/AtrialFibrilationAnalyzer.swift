@@ -44,7 +44,6 @@ class AtrialFibrilationAnalyzer {
             let rrIntervals = self.calculateRRIntervals(reducedSamples)
             let rMSSD = self.calculateNormalizedRMSSD(rrIntervals)
             let she = self.calculateShE(rrIntervals)
-            print("ShE", she)
             
             if rMSSD > THrmssd && she > THshe {
                 result = "Irregular"
@@ -94,7 +93,6 @@ class AtrialFibrilationAnalyzer {
         }
         
         let squareRoot = sqrt(squaresSum / (Double(j) - 1))
-        print("normalized RSMMD", squareRoot / mean)
         
         return squareRoot / mean
     }

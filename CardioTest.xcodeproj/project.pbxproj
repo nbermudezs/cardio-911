@@ -20,15 +20,16 @@
 		E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */; };
 		E61C6AAC1B9BDE15009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */; };
 		E61C6AB01B9BDE15009D82DB /* CardioTestWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */; };
+		E630CBBB1BB4F7FB00942BC0 /* GatewayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630CBBA1BB4F7FB00942BC0 /* GatewayProtocols.swift */; };
 		E6585A031B9BF844005055F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6585A021B9BF844005055F7 /* HealthKit.framework */; };
 		E6585A061B9BFF27005055F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6585A051B9BFF27005055F7 /* HealthKit.framework */; };
-		E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D5461BA62ACC006B80B2 /* BeatPattern.swift */; settings = {ASSET_TAGS = (); }; };
-		E685D54C1BA663B5006B80B2 /* TropoGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D54B1BA663B5006B80B2 /* TropoGateway.swift */; settings = {ASSET_TAGS = (); }; };
-		E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D54D1BA67791006B80B2 /* RestcommGateway.swift */; settings = {ASSET_TAGS = (); }; };
-		E68C1B6F1BAF90FB0016013E /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C1B6E1BAF90FB0016013E /* RestApiManager.swift */; settings = {ASSET_TAGS = (); }; };
-		E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
-		E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
-		E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */; settings = {ASSET_TAGS = (); }; };
+		E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D5461BA62ACC006B80B2 /* BeatPattern.swift */; };
+		E685D54C1BA663B5006B80B2 /* TropoGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D54B1BA663B5006B80B2 /* TropoGateway.swift */; };
+		E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D54D1BA67791006B80B2 /* RestcommGateway.swift */; };
+		E68C1B6F1BAF90FB0016013E /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C1B6E1BAF90FB0016013E /* RestApiManager.swift */; };
+		E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */; };
+		E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */; };
+		E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E61C6AAD1B9BDE15009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E630CBBA1BB4F7FB00942BC0 /* GatewayProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayProtocols.swift; sourceTree = "<group>"; };
 		E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSessionManager.swift; sourceTree = "<group>"; };
 		E6585A011B9BF844005055F7 /* CardioTestWatchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CardioTestWatchApp Extension.entitlements"; sourceTree = "<group>"; };
 		E6585A021B9BF844005055F7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -191,6 +193,7 @@
 		E685D54A1BA6635A006B80B2 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				E630CBBA1BB4F7FB00942BC0 /* GatewayProtocols.swift */,
 				E685D54B1BA663B5006B80B2 /* TropoGateway.swift */,
 				E685D54D1BA67791006B80B2 /* RestcommGateway.swift */,
 				E68C1B6E1BAF90FB0016013E /* RestApiManager.swift */,
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E630CBBB1BB4F7FB00942BC0 /* GatewayProtocols.swift in Sources */,
 				E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */,
 				E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */,
 				E68C1B6F1BAF90FB0016013E /* RestApiManager.swift in Sources */,

@@ -126,7 +126,9 @@ public class WorkoutSessionManager : NSObject, HKWorkoutSessionDelegate {
     func createStreamingHearRateQuery(workoutStartDate: NSDate) -> HKQuery {
         let predicate = HKQuery.predicateForSamplesWithStartDate(workoutStartDate, endDate: nil, options: .None)
         let heartRateQuery = HKAnchoredObjectQuery(type: self.heartRateType!, predicate: predicate, anchor: nil, limit: 0) { (query, samples, deletedObjects, anchor, error) -> Void in
-            self.addHeartRateSamples(samples!)
+            if samples != nil {
+                self.addHeartRateSamples(samples!)
+            }
         }
         
         heartRateQuery.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in

@@ -8,24 +8,25 @@
 
 import Foundation
 
-protocol TropoGatewayDelegate : class {
-    func callDidSucceed()
-}
-
-class TropoGateway {
+class TropoGateway: Gateway {
     let voiceApiKey = "0e8d238f7cde9c4e86d1afddc3375e3d5b301c6bca85517a50fe7752343b130c3a9464a75ece5b208bca5fe4"
     let smsApiKey = "0e8d2aceb21cb94b8002f71c86b3e5afa3523aef717cd9a9363cbe9b8eb744e469930c81c50ed70d47e69625"
     let host = "https://api.tropo.com"
     let apiVersion = "1.0"
-    let restApiManager = RestApiManager()
+    let restApiManager = RestApiManager(responseType: .XML)
     
-    weak var delegate: TropoGatewayDelegate?
-    
-    init() {
-        
+    override init() {
+
+    }
+
+    override func sendSmsNotification(from: String, to: String, body: String) {
+    }
+
+    override func sendTtsSms(from: String, to: String, body: String) {
+
     }
     
-    func notifyUserInTroubles(number: String, name: String) {
+    private func notifyUserInTroubles(number: String, name: String) {
         let url = String(format: "%@/%@/sessions?action=create&token=%@&number=%@", host, apiVersion, voiceApiKey, number)
         restApiManager.makeHTTPGetRequest(url) { (data, error) -> Void in
             if error == nil {

@@ -8,30 +8,68 @@
 
 import Foundation
 
-
-typealias ServiceResponse = ([String: AnyObject]?, NSError?) -> Void
+typealias Dict = [String: AnyObject]?
+typealias ServiceResponse = (Dict, NSError?) -> Void
 
 enum RestApiManagerError: ErrorType {
     case Serialization
 }
 
+enum ResponseType {
+    case JSON
+    case XML
+}
+
+protocol ResponseHandler: class {
+    func handle(data: NSData?) throws -> [String: AnyObject]?
+}
+
+class JsonResponseHandler: ResponseHandler {
+    func handle(data: NSData?) throws -> [String: AnyObject]? {
+        let jsonObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+        if let dict = jsonObject as? [String: AnyObject] {
+            return dict
+        }
+        return nil
+    }
+}
+
+class XmlResponseHandler: ResponseHandler {
+    func handle(data: NSData?) throws -> [String: AnyObject]? {
+        let jsonObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+        if let dict = jsonObject as? [String: AnyObject] {
+            return dict
+        }
+        return nil
+    }
+}
+
 class RestApiManager: NSObject {
+    let responseType: ResponseType
+    let responseHandler: ResponseHandler
+
+    init(responseType: ResponseType) {
+        self.responseType = responseType
+        switch responseType {
+        case .JSON:
+            self.responseHandler = JsonResponseHandler()
+        case .XML:
+            self.responseHandler = XmlResponseHandler()
+        }
+    }
+
     func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) -> Bool {
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
         let params : AnyObject? = body["params"]
 
         // Set the method to POST
         request.HTTPMethod = "POST"
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        self.setHeaders(request)
 
         // Set the POST body for the request
         if params != nil {
-            do {
-                try request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params!, options: .PrettyPrinted)
-            } catch {
-                print("Something failed while serializing params")
-                return false
-            }
+            let httpBody = try? NSJSONSerialization.dataWithJSONObject(params!, options: .PrettyPrinted)
+            request.HTTPBody = httpBody
         }
 
         self.makeRequest(request, onCompletion: onCompletion)
@@ -42,7 +80,7 @@ class RestApiManager: NSObject {
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
 
         request.HTTPMethod = "GET"
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        self.setHeaders(request)
 
         self.makeRequest(request, onCompletion: onCompletion)
         return true
@@ -52,22 +90,27 @@ class RestApiManager: NSObject {
         let session = NSURLSession.sharedSession()
 
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let headers = response as? NSHTTPURLResponse
-            let statusCode = headers!.statusCode
-            if statusCode == 200 {
-                onCompletion(nil, nil)
+            if let headers = response as? NSHTTPURLResponse {
+                let statusCode = headers.statusCode
+                if statusCode == 200 {
+                    if let responseDictionary = try? self.responseHandler.handle(data) {
+                        onCompletion(responseDictionary, nil)
+                    } else {
+                        onCompletion(nil, nil)
+                    }
+                } else {
+                    onCompletion(nil, NSError(domain: "MakeRequestResponseError", code: statusCode, userInfo: nil))
+                }
             } else {
-                onCompletion(nil, NSError(domain: "MakeRequestResponseError", code: statusCode, userInfo: nil))
+                onCompletion(nil, NSError(domain: "EmptyResponse", code: 500, userInfo: nil))
             }
         })
         task.resume()
     }
 
-    private func handleJsonResponse(data: NSData?) throws -> [String: AnyObject]? {
-        let jsonObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-        if let dict = jsonObject as? [String: AnyObject] {
-            return dict
+    private func setHeaders(request: NSMutableURLRequest) {
+        if responseType == .JSON {
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         }
-        return nil
     }
 }

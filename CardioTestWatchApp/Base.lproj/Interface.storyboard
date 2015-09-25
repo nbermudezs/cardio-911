@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9jU-dw-aon">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9jU-dw-aon">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9013"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -37,17 +37,17 @@
             <objects>
                 <controller identifier="diagnoseController" hidesWhenLoading="NO" id="9jU-dw-aon" customClass="DiagnoseInterfaceController" customModule="CardioTestWatchApp_Extension">
                     <items>
-                        <group width="1" height="50" alignment="left" id="JNT-Fi-7i4">
+                        <group width="1" height="96" alignment="left" id="pmI-S8-yo7">
                             <items>
-                                <group width="50" height="50" alignment="left" id="pmI-S8-yo7">
-                                    <items>
-                                        <imageView width="40" height="40" alignment="center" verticalAlignment="center" image="heart" contentMode="scaleAspectFit" id="IqN-XG-mMP"/>
-                                    </items>
-                                </group>
-                                <label height="27.5" alignment="right" text="---" id="zTs-Qe-0Bu">
+                                <imageView width="50" height="50" alignment="center" verticalAlignment="center" image="heart" contentMode="scaleAspectFit" id="IqN-XG-mMP"/>
+                            </items>
+                        </group>
+                        <group width="1" height="71" alignment="left" id="JNT-Fi-7i4">
+                            <items>
+                                <label height="27.5" alignment="center" text="---" id="zTs-Qe-0Bu">
                                     <fontDescription key="font" type="system" pointSize="28"/>
                                 </label>
-                                <label alignment="right" text="BPM" id="9bS-p3-7dK">
+                                <label alignment="center" text="BPM" id="9bS-p3-7dK">
                                     <color key="textColor" red="1" green="0.088671060176542915" blue="0.053279501429031595" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
@@ -63,7 +63,6 @@
                                 </label>
                             </items>
                         </group>
-                        <label alignment="left" text="Diagnosis:" id="fde-UK-YaJ"/>
                         <separator alignment="left" id="fJm-zR-eQg"/>
                         <switch width="1" alignment="left" title="Fake AF" id="Kfb-ey-mMt">
                             <connections>
@@ -82,13 +81,12 @@
                     </menu>
                     <connections>
                         <outlet property="bpmLabel" destination="zTs-Qe-0Bu" id="bt9-LT-qUu"/>
-                        <outlet property="diagnosisLabel" destination="fde-UK-YaJ" id="xIi-L4-CbD"/>
                         <outlet property="heartIcon" destination="IqN-XG-mMP" id="G2g-op-zMD"/>
                         <outlet property="rmssdLabel" destination="s5U-UF-DPp" id="ebi-OL-wRZ"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="388" y="434"/>
+            <point key="canvasLocation" x="381" y="245"/>
         </scene>
     </scenes>
 </document>

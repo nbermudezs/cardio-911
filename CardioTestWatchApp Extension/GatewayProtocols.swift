@@ -11,6 +11,7 @@ import Foundation
 protocol GatewayProtocol: class {
     func sendSmsNotification(from: String, to: String, body: String)
     func sendTtsSms(from: String, to: String, body: String)
+    func sendVoiceCall(from: String, to: String, data: [String:String])
 }
 
 protocol GatewayDelegate: class {
@@ -25,5 +26,9 @@ class Gateway: GatewayProtocol {
     }
 
     func sendSmsNotification(from: String, to: String, body: String) {
+    }
+
+    func sendVoiceCall(from: String, to: String, data: [String:String]) {
+
     }
 }

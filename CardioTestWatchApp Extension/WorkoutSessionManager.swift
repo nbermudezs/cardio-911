@@ -113,7 +113,18 @@ public class WorkoutSessionManager : NSObject, HKWorkoutSessionDelegate {
     }
     
     func saveWorkout() {
-        
+        guard let startDate = self.workoutStartDate, endDate = self.workoutStopDate else { return }
+        let workout = HKWorkout(
+            activityType: self.workoutSession.activityType,
+            startDate: startDate,
+            endDate: endDate)
+
+        self.healthStore.saveObject(workout) { success, error in
+            if success && self.heartRateSamples.count > 0 {
+                self.healthStore.addSamples(self.heartRateSamples, toWorkout: workout) { success, error in
+                }
+            }
+        }
     }
     
     func analyzeHeartRate(samples: [HKQuantitySample]) {

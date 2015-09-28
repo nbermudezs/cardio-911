@@ -21,6 +21,7 @@
 		E61C6AAC1B9BDE15009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */; };
 		E61C6AB01B9BDE15009D82DB /* CardioTestWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */; };
 		E630CBBB1BB4F7FB00942BC0 /* GatewayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630CBBA1BB4F7FB00942BC0 /* GatewayProtocols.swift */; };
+		E630CBBF1BB5075B00942BC0 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630CBBE1BB5075B00942BC0 /* ContentViewController.swift */; };
 		E6585A031B9BF844005055F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6585A021B9BF844005055F7 /* HealthKit.framework */; };
 		E6585A061B9BFF27005055F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6585A051B9BFF27005055F7 /* HealthKit.framework */; };
 		E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685D5461BA62ACC006B80B2 /* BeatPattern.swift */; };
@@ -30,6 +31,8 @@
 		E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */; };
 		E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */; };
 		E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */; };
+		E6A44FA81BB7157500748A6F /* XmlGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A44FA71BB7157500748A6F /* XmlGenerator.swift */; };
+		E6EB72D41BB8E274006E2CE7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB72D31BB8E274006E2CE7 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,7 @@
 		E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E61C6AAD1B9BDE15009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E630CBBA1BB4F7FB00942BC0 /* GatewayProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayProtocols.swift; sourceTree = "<group>"; };
+		E630CBBE1BB5075B00942BC0 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		E65859FF1B9BE93C005055F7 /* WorkoutSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSessionManager.swift; sourceTree = "<group>"; };
 		E6585A011B9BF844005055F7 /* CardioTestWatchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CardioTestWatchApp Extension.entitlements"; sourceTree = "<group>"; };
 		E6585A021B9BF844005055F7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -104,6 +108,8 @@
 		E68C1B6E1BAF90FB0016013E /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiagnoseInterfaceController.swift; path = ../CardioTestWatchApp/DiagnoseInterfaceController.swift; sourceTree = "<group>"; };
 		E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtrialFibrilationAnalyzer.swift; sourceTree = "<group>"; };
+		E6A44FA71BB7157500748A6F /* XmlGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlGenerator.swift; sourceTree = "<group>"; };
+		E6EB72D31BB8E274006E2CE7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 				E61C6A8B1B9BDE01009D82DB /* LaunchScreen.storyboard */,
 				E61C6A8E1B9BDE01009D82DB /* Info.plist */,
 				E61C6A861B9BDE01009D82DB /* CardioTest.xcdatamodeld */,
+				E630CBBE1BB5075B00942BC0 /* ContentViewController.swift */,
 			);
 			path = CardioTest;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 		E61C6AA61B9BDE15009D82DB /* CardioTestWatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E6A44FA61BB7153900748A6F /* utils */,
 				E685D54A1BA6635A006B80B2 /* libs */,
 				E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */,
 				E6585A011B9BF844005055F7 /* CardioTestWatchApp Extension.entitlements */,
@@ -199,6 +207,15 @@
 				E68C1B6E1BAF90FB0016013E /* RestApiManager.swift */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		E6A44FA61BB7153900748A6F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E6A44FA71BB7157500748A6F /* XmlGenerator.swift */,
+				E6EB72D31BB8E274006E2CE7 /* Extensions.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +280,7 @@
 		E61C6A741B9BDE00009D82DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nestor Bermudez";
 				TargetAttributes = {
@@ -344,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E630CBBF1BB5075B00942BC0 /* ContentViewController.swift in Sources */,
 				E61C6A881B9BDE01009D82DB /* CardioTest.xcdatamodeld in Sources */,
 				E61C6A821B9BDE01009D82DB /* ViewController.swift in Sources */,
 				E61C6A801B9BDE01009D82DB /* AppDelegate.swift in Sources */,
@@ -359,7 +378,9 @@
 				E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */,
 				E68C1B6F1BAF90FB0016013E /* RestApiManager.swift in Sources */,
 				E685D54C1BA663B5006B80B2 /* TropoGateway.swift in Sources */,
+				E6A44FA81BB7157500748A6F /* XmlGenerator.swift in Sources */,
 				E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */,
+				E6EB72D41BB8E274006E2CE7 /* Extensions.swift in Sources */,
 				E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */,
 				E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */,
 				E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */,

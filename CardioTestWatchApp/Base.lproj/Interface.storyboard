@@ -39,13 +39,13 @@
                     <items>
                         <group width="1" height="96" alignment="left" id="pmI-S8-yo7">
                             <items>
-                                <imageView width="50" height="50" alignment="center" verticalAlignment="center" image="heart" contentMode="scaleAspectFit" id="IqN-XG-mMP"/>
+                                <imageView width="60" height="80" alignment="center" verticalAlignment="center" image="red-with-red-heart-md" contentMode="scaleAspectFit" id="IqN-XG-mMP"/>
                             </items>
                         </group>
                         <group width="1" height="71" alignment="left" id="JNT-Fi-7i4">
                             <items>
                                 <label height="27.5" alignment="center" text="---" id="zTs-Qe-0Bu">
-                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <fontDescription key="font" type="system" pointSize="32"/>
                                 </label>
                                 <label alignment="center" text="BPM" id="9bS-p3-7dK">
                                     <color key="textColor" red="1" green="0.088671060176542915" blue="0.053279501429031595" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,6 +75,11 @@
                             <menuItem title="Finish" icon="accept" id="iqh-el-42M">
                                 <connections>
                                     <action selector="finishDiagnostic" destination="9jU-dw-aon" id="S14-pO-Tib"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Restart" icon="resume" id="xEq-Up-E51">
+                                <connections>
+                                    <action selector="restartAnalysis" destination="9jU-dw-aon" id="lRD-gl-B73"/>
                                 </connections>
                             </menuItem>
                         </items>

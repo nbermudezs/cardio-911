@@ -16,7 +16,6 @@
 		E61C6A9A1B9BDE15009D82DB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61C6A981B9BDE15009D82DB /* Interface.storyboard */; };
 		E61C6A9C1B9BDE15009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6A9B1B9BDE15009D82DB /* Assets.xcassets */; };
 		E61C6AA31B9BDE15009D82DB /* CardioTestWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E61C6AA21B9BDE15009D82DB /* CardioTestWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E61C6AA81B9BDE15009D82DB /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C6AA71B9BDE15009D82DB /* InterfaceController.swift */; };
 		E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */; };
 		E61C6AAC1B9BDE15009D82DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */; };
 		E61C6AB01B9BDE15009D82DB /* CardioTestWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E61C6A961B9BDE15009D82DB /* CardioTestWatchApp.app */; };
@@ -33,6 +32,7 @@
 		E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */; };
 		E6A44FA81BB7157500748A6F /* XmlGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A44FA71BB7157500748A6F /* XmlGenerator.swift */; };
 		E6EB72D41BB8E274006E2CE7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB72D31BB8E274006E2CE7 /* Extensions.swift */; };
+		E6EB9EDF1BBA396F0063D679 /* Chicago TADHack.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E6EB9EDE1BBA396F0063D679 /* Chicago TADHack.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,6 @@
 		E61C6A9B1B9BDE15009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E61C6A9D1B9BDE15009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E61C6AA21B9BDE15009D82DB /* CardioTestWatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CardioTestWatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E61C6AA71B9BDE15009D82DB /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E61C6AAD1B9BDE15009D82DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtrialFibrilationAnalyzer.swift; sourceTree = "<group>"; };
 		E6A44FA71BB7157500748A6F /* XmlGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlGenerator.swift; sourceTree = "<group>"; };
 		E6EB72D31BB8E274006E2CE7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E6EB9EDE1BBA396F0063D679 /* Chicago TADHack.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Chicago TADHack.gpx"; path = "CardioTest/Chicago TADHack.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +135,7 @@
 		E61C6A731B9BDE00009D82DB = {
 			isa = PBXGroup;
 			children = (
+				E6EB9EDE1BBA396F0063D679 /* Chicago TADHack.gpx */,
 				E6585A051B9BFF27005055F7 /* HealthKit.framework */,
 				E6585A021B9BF844005055F7 /* HealthKit.framework */,
 				E61C6A7E1B9BDE00009D82DB /* CardioTest */,
@@ -188,7 +189,6 @@
 				E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */,
 				E6585A011B9BF844005055F7 /* CardioTestWatchApp Extension.entitlements */,
 				E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */,
-				E61C6AA71B9BDE15009D82DB /* InterfaceController.swift */,
 				E61C6AA91B9BDE15009D82DB /* ExtensionDelegate.swift */,
 				E61C6AAB1B9BDE15009D82DB /* Assets.xcassets */,
 				E61C6AAD1B9BDE15009D82DB /* Info.plist */,
@@ -334,6 +334,7 @@
 			files = (
 				E61C6A8D1B9BDE01009D82DB /* LaunchScreen.storyboard in Resources */,
 				E61C6A8A1B9BDE01009D82DB /* Assets.xcassets in Resources */,
+				E6EB9EDF1BBA396F0063D679 /* Chicago TADHack.gpx in Resources */,
 				E61C6A851B9BDE01009D82DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +385,6 @@
 				E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */,
 				E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */,
 				E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */,
-				E61C6AA81B9BDE15009D82DB /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

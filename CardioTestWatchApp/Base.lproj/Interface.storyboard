@@ -5,33 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9013"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CardioTestWatchApp" customModuleProvider="target">
-                    <items>
-                        <label alignment="left" text="Test Duration" id="VjD-uL-VUp"/>
-                        <timer alignment="center" format="short" previewedSeconds="60" id="po9-UT-uj7"/>
-                        <slider width="1" alignment="left" continuous="YES" value="11" minimum="1" maximum="61" steps="12" id="LVX-lQ-h4D">
-                            <connections>
-                                <action selector="sliderDidChange:" destination="AgC-eL-Hgc" id="gW0-t0-X1o"/>
-                            </connections>
-                        </slider>
-                        <button width="1" alignment="left" title="Start" id="MNG-ZY-RHC">
-                            <connections>
-                                <action selector="startDiagnosis" destination="AgC-eL-Hgc" id="8lk-xb-pak"/>
-                            </connections>
-                        </button>
-                    </items>
-                    <connections>
-                        <outlet property="slider" destination="LVX-lQ-h4D" id="hxK-Zl-hCR"/>
-                        <outlet property="startButton" destination="MNG-ZY-RHC" id="Mwj-u4-wO8"/>
-                        <outlet property="timer" destination="po9-UT-uj7" id="v6l-6F-EzM"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="231" y="197"/>
-        </scene>
         <!--diagnoseController-->
         <scene sceneID="bLy-r2-vHN">
             <objects>
@@ -64,6 +37,12 @@
                             </items>
                         </group>
                         <separator alignment="left" id="fJm-zR-eQg"/>
+                        <button width="1" alignment="left" title="Location" id="GNp-UE-jRO">
+                            <connections>
+                                <action selector="requestLocation" destination="9jU-dw-aon" id="6SE-Lf-Be0"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="---" numberOfLines="2" id="7Y4-07-UsK"/>
                         <switch width="1" alignment="left" title="Fake AF" id="Kfb-ey-mMt">
                             <connections>
                                 <action selector="toggleFakeAf:" destination="9jU-dw-aon" id="3sM-DC-ljR"/>
@@ -87,6 +66,7 @@
                     <connections>
                         <outlet property="bpmLabel" destination="zTs-Qe-0Bu" id="bt9-LT-qUu"/>
                         <outlet property="heartIcon" destination="IqN-XG-mMP" id="G2g-op-zMD"/>
+                        <outlet property="locationLabel" destination="7Y4-07-UsK" id="4dr-5Q-WWY"/>
                         <outlet property="rmssdLabel" destination="s5U-UF-DPp" id="ebi-OL-wRZ"/>
                     </connections>
                 </controller>

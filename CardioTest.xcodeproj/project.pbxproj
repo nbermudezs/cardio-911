@@ -300,6 +300,9 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 246HEUPQZ9;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};

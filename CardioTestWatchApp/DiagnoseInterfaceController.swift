@@ -293,7 +293,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
         let coordinate = locations[0].coordinate
         let location = String(format: "%f latitude, %f longitude", coordinate.latitude, coordinate.longitude)
         self.locationLabel.setText(location)
-        //self.callContactWithLocation(location)
+        self.callContactWithLocation(location)
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

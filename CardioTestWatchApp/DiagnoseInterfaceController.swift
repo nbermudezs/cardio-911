@@ -9,20 +9,24 @@
 import Foundation
 import HealthKit
 import WatchKit
+import CoreLocation
 
-class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerDelegate, GatewayDelegate {
+class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerDelegate, GatewayDelegate, CLLocationManagerDelegate {
     
     // MARK: Outlets
     
     @IBOutlet var bpmLabel: WKInterfaceLabel!
 
     @IBOutlet var rmssdLabel: WKInterfaceLabel!
-    
+
+    @IBOutlet var locationLabel: WKInterfaceLabel!
+
     @IBOutlet var heartIcon: WKInterfaceImage!
-    
+
     // MARK: Properties
     let healthStore : HKHealthStore = HKHealthStore()
     let gateway: Gateway
+    let locationManager: CLLocationManager = CLLocationManager()
     let alertWaitTime: Int = 30 // seconds
     var timer: NSTimer? = nil
     
@@ -40,6 +44,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     var notAlertedYet = true
     var playHapticFeedback = true
     var alertResponded = false
+    var isRequestingLocation = false
     
     // MARK: Overrides
     
@@ -50,10 +55,14 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
 
         self.initWorkoutSessionManager()
         gateway.delegate = self
+
+        self.locationManager.delegate = self
     }
     
     override func willActivate() {
-        self.tryStartAnalysis()
+        self.locationManager.requestAlwaysAuthorization()
+
+        self.checkHealthKitAuthorization(self.hkAuthorizationCallback)
         self.startAnimation()
     }
     
@@ -67,17 +76,35 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
         self.sessionManager?.delegate = self
     }
 
-    private func tryStartAnalysis() {
+    private func checkHealthKitAuthorization(callback: (Bool, NSError?) -> Void) {
         let typesToShare = Set([HKObjectType.workoutType()])
         let typesToRead = Set([
             HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!
             ])
-        self.healthStore.requestAuthorizationToShareTypes(typesToShare, readTypes: typesToRead) { success, error in
-            if success {
-                self.healthAccessAuthorized()
-            } else {
-                self.healthAccessDenied()
-            }
+        self.healthStore.requestAuthorizationToShareTypes(typesToShare, readTypes: typesToRead, completion: callback)
+    }
+
+    private func hkAuthorizationCallback(success: Bool, error: NSError?) {
+        if success {
+            self.checkCoreLocationAuthorization()
+            self.healthAccessAuthorized()
+        } else {
+            self.healthAccessDenied()
+        }
+    }
+
+    private func checkCoreLocationAuthorization() {
+        guard !isRequestingLocation else {
+            locationManager.stopUpdatingLocation()
+            isRequestingLocation = false
+
+            return
+        }
+
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+
+        if authorizationStatus == .NotDetermined {
+            locationManager.requestAlwaysAuthorization()
         }
     }
 
@@ -133,7 +160,11 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     @IBAction func restartAnalysis() {
         self.finishDiagnostic()
         self.initWorkoutSessionManager()
-        self.tryStartAnalysis()
+        self.checkHealthKitAuthorization(self.hkAuthorizationCallback)
+    }
+
+    @IBAction func requestLocation() {
+        self.locationManager.requestLocation()
     }
     // MARK: Emergency handling
     
@@ -192,9 +223,17 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     }
     
     private func callContact() {
-        let name = "Nestor Bermudez" // NSFullUserName()
-        let location = self.getCurrentLocation() // get location using location API
-        gateway.sendVoiceCall("+13122011010", to: "+13122398676", data: ["name": name, "location": location])
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.requestLocation()
+        } else {
+            self.callContactWithLocation("Unknown location")
+        }
+    }
+
+    private func callContactWithLocation(location: String) {
+        let name = "Nestor Bermudez"
+        print(location, name)
+        self.gateway.sendVoiceCall("+13122011010", to: "+13122398676", data: ["name": name, "location": location])
     }
 
     // MARK: Implement WorkoutSessionManagerDelegate
@@ -248,9 +287,27 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
             actions: [okAction])
     }
 
+    // MARK: Implement CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.count == 0 { return }
+        let coordinate = locations[0].coordinate
+        let location = String(format: "%f latitude, %f longitude", coordinate.latitude, coordinate.longitude)
+        self.locationLabel.setText(location)
+        //self.callContactWithLocation(location)
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+    }
+
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("didChangeAuthorizationStatus")
+        print(status)
+    }
+
     // MARK: Geo location
 
-    private func getCurrentLocation() -> String {
-        return "Burger King, Central Park"
+    private func getCurrentLocation(callback: (String) -> Void) {
+        callback("Burger King, Central Park")
     }
 }

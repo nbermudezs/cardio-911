@@ -64,6 +64,8 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
 
         self.checkHealthKitAuthorization(self.hkAuthorizationCallback)
         self.startAnimation()
+
+        RestCommGateway().sendVoiceNotification("", to: "", body: "")
     }
     
     override func didDeactivate() {
@@ -115,7 +117,7 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
             userInfo: nil,
             repeats: true)
     }
-    
+
     // MARK: Animation
     
     func animateHeart() {
@@ -232,8 +234,13 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
 
     private func callContactWithLocation(location: String) {
         let name = "Nestor Bermudez"
-        print(location, name)
-        self.gateway.sendVoiceCall("+13122011010", to: "+13122398676", data: ["name": name, "location": location])
+        let phoneNumber = "+14349965226"
+        let matrix = MatrixNotifier()
+        matrix.notifyAdminChannel(phoneNumber, name: name, location: location)
+        matrix.notifyContact(name, location: location)
+        self.notificationWasSuccessful()
+        RestCommGateway().sendVoiceNotification("", to: "", body: "")
+        // self.gateway.sendVoiceCall("+13122011010", to: phoneNumber, data: ["name": name, "location": location])
     }
 
     // MARK: Implement WorkoutSessionManagerDelegate
@@ -297,11 +304,12 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("location error")
         print(error)
     }
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("didChangeAuthorizationStatus")
+        print("location Status")
         print(status)
     }
 

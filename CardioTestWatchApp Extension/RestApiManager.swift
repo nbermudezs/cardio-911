@@ -58,21 +58,22 @@ class RestApiManager: NSObject {
         }
     }
 
-    func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) -> Bool {
+    func makeHTTPPostRequest(path: String, body: [String: AnyObject], headers: [String:String], onCompletion: ServiceResponse) -> Bool {
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
         let params : AnyObject? = body["params"]
 
         // Set the method to POST
         request.HTTPMethod = "POST"
-        self.setHeaders(request)
+        self.setHeaders(request, headers: headers)
 
         // Set the POST body for the request
-        if params != nil {
+        if params != nil && false {
             let httpBody = try? NSJSONSerialization.dataWithJSONObject(params!, options: .PrettyPrinted)
             request.HTTPBody = httpBody
+            request.HTTPBody = String(format: "From=%@&To=%@&Body=%@", "%2B13122011010", "%2B19704995058", "potato").dataUsingEncoding(NSASCIIStringEncoding)
         }
 
-        self.makeRequest(request, onCompletion: onCompletion)
+        self.makeRequest(request, basicAuth: nil, onCompletion: onCompletion)
         return true
     }
 
@@ -80,18 +81,27 @@ class RestApiManager: NSObject {
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
 
         request.HTTPMethod = "GET"
-        self.setHeaders(request)
+        self.setHeaders(request, headers: [:])
 
-        self.makeRequest(request, onCompletion: onCompletion)
+        self.makeRequest(request, basicAuth: nil, onCompletion: onCompletion)
         return true
     }
 
-    private func makeRequest(request: NSMutableURLRequest, onCompletion: ServiceResponse) {
-        let session = NSURLSession.sharedSession()
 
+    func makeRequest(request: NSMutableURLRequest, basicAuth: [String: String]?, onCompletion: ServiceResponse) {
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        if basicAuth != nil {
+            config.HTTPAdditionalHeaders = basicAuth!
+        }
+        let session = NSURLSession(configuration: config)
+
+        print(request.URL)
+        // print(NSString(data: request.HTTPBody!, encoding: NSUTF8StringEncoding))
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             if let headers = response as? NSHTTPURLResponse {
                 let statusCode = headers.statusCode
+                let parsed = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print(parsed)
                 if statusCode == 200 {
                     if let responseDictionary = try? self.responseHandler.handle(data) {
                         onCompletion(responseDictionary, nil)
@@ -108,9 +118,11 @@ class RestApiManager: NSObject {
         task.resume()
     }
 
-    private func setHeaders(request: NSMutableURLRequest) {
+    private func setHeaders(request: NSMutableURLRequest, headers: [String:String]) {
         if responseType == .JSON {
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        } else if responseType == .XML {
+            //request.setValue("text/xml", forHTTPHeaderField: "Content-Type")
         }
     }
 }

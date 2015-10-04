@@ -32,6 +32,13 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
+        self.configureDefaults()
+    }
+
+    private func configureDefaults() {
+        let sharedDefaults = NSUserDefaults(suiteName: "group.com.agilityfeat.cardio911")
+        NSUserDefaults.standardUserDefaults().registerDefaults(["contactNumber":"+13122398676"])
+        sharedDefaults?.synchronize()
     }
 
     override func didReceiveMemoryWarning() {

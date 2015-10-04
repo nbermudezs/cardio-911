@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.(configureDefaults in _E4858690CE15BF2F73E1A03AE202372C)() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSUserDefaults.standardUserDefaults()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "RestApiManager.makeHTTPPostRequest(String, body : [String : AnyObject], onCompletion : ([String : AnyObject]?, NSError?) -&gt; ()) -&gt; Bool:RestApiManager.swift">
          <PersistentStrings>
             <PersistentString

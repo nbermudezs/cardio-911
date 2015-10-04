@@ -31,6 +31,8 @@
 		E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */; };
 		E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */; };
 		E6A44FA81BB7157500748A6F /* XmlGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A44FA71BB7157500748A6F /* XmlGenerator.swift */; };
+		E6C0F4651BBD03C30011E68B /* SharedConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0F4641BBD03C30011E68B /* SharedConfig.swift */; };
+		E6E92A151BC0AA51001F7576 /* MatrixNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E92A141BC0AA51001F7576 /* MatrixNotifier.swift */; };
 		E6EB72D41BB8E274006E2CE7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB72D31BB8E274006E2CE7 /* Extensions.swift */; };
 		E6EB9EDF1BBA396F0063D679 /* Chicago TADHack.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E6EB9EDE1BBA396F0063D679 /* Chicago TADHack.gpx */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		E696F4381B9CE1850017352F /* DiagnoseInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiagnoseInterfaceController.swift; path = ../CardioTestWatchApp/DiagnoseInterfaceController.swift; sourceTree = "<group>"; };
 		E696F43D1B9D00540017352F /* AtrialFibrilationAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtrialFibrilationAnalyzer.swift; sourceTree = "<group>"; };
 		E6A44FA71BB7157500748A6F /* XmlGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlGenerator.swift; sourceTree = "<group>"; };
+		E6C0F4641BBD03C30011E68B /* SharedConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedConfig.swift; sourceTree = "<group>"; };
+		E6E92A141BC0AA51001F7576 /* MatrixNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixNotifier.swift; sourceTree = "<group>"; };
 		E6EB72D31BB8E274006E2CE7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E6EB9EDE1BBA396F0063D679 /* Chicago TADHack.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Chicago TADHack.gpx"; path = "CardioTest/Chicago TADHack.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +209,8 @@
 				E685D54B1BA663B5006B80B2 /* TropoGateway.swift */,
 				E685D54D1BA67791006B80B2 /* RestcommGateway.swift */,
 				E68C1B6E1BAF90FB0016013E /* RestApiManager.swift */,
+				E6C0F4641BBD03C30011E68B /* SharedConfig.swift */,
+				E6E92A141BC0AA51001F7576 /* MatrixNotifier.swift */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			files = (
 				E630CBBB1BB4F7FB00942BC0 /* GatewayProtocols.swift in Sources */,
 				E696F43E1B9D00540017352F /* AtrialFibrilationAnalyzer.swift in Sources */,
+				E6C0F4651BBD03C30011E68B /* SharedConfig.swift in Sources */,
 				E61C6AAA1B9BDE15009D82DB /* ExtensionDelegate.swift in Sources */,
 				E68C1B6F1BAF90FB0016013E /* RestApiManager.swift in Sources */,
 				E685D54C1BA663B5006B80B2 /* TropoGateway.swift in Sources */,
@@ -386,6 +393,7 @@
 				E696F43C1B9CE4600017352F /* DiagnoseInterfaceController.swift in Sources */,
 				E6EB72D41BB8E274006E2CE7 /* Extensions.swift in Sources */,
 				E685D54E1BA67791006B80B2 /* RestcommGateway.swift in Sources */,
+				E6E92A151BC0AA51001F7576 /* MatrixNotifier.swift in Sources */,
 				E696F43A1B9CE44F0017352F /* WorkoutSessionManager.swift in Sources */,
 				E685D5471BA62ACC006B80B2 /* BeatPattern.swift in Sources */,
 			);

@@ -26,8 +26,8 @@
                                 </label>
                             </items>
                         </group>
-                        <separator alignment="left" id="ldk-rY-9R4"/>
-                        <group width="1" alignment="left" id="Dcc-Rf-V8F">
+                        <separator alignment="left" hidden="YES" id="ldk-rY-9R4"/>
+                        <group width="1" alignment="left" hidden="YES" id="Dcc-Rf-V8F">
                             <items>
                                 <label alignment="left" text="---" id="s5U-UF-DPp"/>
                                 <label alignment="left" text="rMSSD" id="fpB-yX-mPS">
@@ -37,12 +37,12 @@
                             </items>
                         </group>
                         <separator alignment="left" id="fJm-zR-eQg"/>
-                        <button width="1" alignment="left" title="Location" id="GNp-UE-jRO">
+                        <button width="1" alignment="left" hidden="YES" title="Location" id="GNp-UE-jRO">
                             <connections>
                                 <action selector="requestLocation" destination="9jU-dw-aon" id="6SE-Lf-Be0"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="---" numberOfLines="2" id="7Y4-07-UsK"/>
+                        <label alignment="left" hidden="YES" text="---" numberOfLines="2" id="7Y4-07-UsK"/>
                         <switch width="1" alignment="left" title="Fake AF" id="Kfb-ey-mMt">
                             <connections>
                                 <action selector="toggleFakeAf:" destination="9jU-dw-aon" id="3sM-DC-ljR"/>

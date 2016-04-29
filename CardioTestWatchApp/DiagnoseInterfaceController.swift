@@ -64,8 +64,6 @@ class DiagnoseInterfaceController: WKInterfaceController, WorkoutSessionManagerD
 
         self.checkHealthKitAuthorization(self.hkAuthorizationCallback)
         self.startAnimation()
-
-        RestCommGateway().sendVoiceNotification("", to: "", body: "")
     }
     
     override func didDeactivate() {

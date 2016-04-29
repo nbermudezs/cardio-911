@@ -39,7 +39,7 @@ class RestCommGateway: Gateway {
     func sendVoiceNotification(from: String, to: String, body: String) {
         //let resourceUrl = "http://23.23.228.238:8080/restcomm-rvd/services/apps/TADHack-2015/start".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         // let url = String(format: "%@/Calls?From=%@&To=%@&Url=%@", restCommApiCommon, from, to, resourceUrl!)
-        let url = "http://23.23.228.238:8080/restcomm-rvd/services/apps/TADHack-2015/start"
+        let url = "http://23.23.228.238:8080/restcomm-rvd/services/apps/TADHack-2015/start?to=14349965226"
 
         let userPasswordString = "ACae6e420f425248d6a26948c17a9e2acf:961c09ae42e6d74e99e5745e39d161af"
         let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
